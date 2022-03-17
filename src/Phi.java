@@ -23,7 +23,7 @@ public class Phi {
         long startTime = System.currentTimeMillis();
         for (int i = 1; i <= n; i++) {
             phiTo1Million[i] = phi(i);
-            output.append(phiTo1Million[i] + "\n");
+            output.append(phiTo1Million[i]).append("\n");
         }
         long endTime = System.currentTimeMillis();
 

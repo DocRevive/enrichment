@@ -23,11 +23,11 @@ public class Phi {
         long startTime = System.currentTimeMillis();
         for (int i = 1; i <= n; i++) {
             phiTo1Million[i] = phi(i);
-            output.append(phiTo1Million[i] + "\n");
+            output.append(phiTo1Million[i]).append("\n");
         }
         long endTime = System.currentTimeMillis();
 
-        System.out.println((endTime - startTime) / 1000 + " s");
+        System.out.println((endTime - startTime) + "ms");
         System.out.println("Done, writing...");
 
         try {
@@ -53,6 +53,35 @@ public class Phi {
      * @return    number of k's that fit the conditions
      */
     public static int phi(int n)
+    {
+        double product = n;
+        int[] primeFBases = primeFBases(primeFactorization(n));
+
+        /*
+         * Instead of looping through millions of k's, which is
+         * still expensive, it uses Euler's product formula to
+         * skip the k-loop. Still needs prime factors but takes
+         * 5 seconds instead of 1 hour
+         *
+         * phi(n) = n(1-(1/p1))(1-(1/p2))...(1-(1/pr))
+         * where p1,...,pr are unique prime factors of n
+         */
+
+        for (int factor : primeFBases) {
+            product *= (1.0 - 1.0/factor);
+        }
+
+        return (int) product;
+    }
+
+    /**
+     * The number of integers k such that 1 <= k <= n
+     * and the GCF of n and k is 1
+     *
+     * @param  n  positive integer >= 1
+     * @return    number of k's that fit the conditions
+     */
+    public static int phiOld(int n)
     {
         int k;
         int numK = 0;

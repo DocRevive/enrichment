@@ -75,8 +75,7 @@ public class Phi {
     }
 
     /**
-     * The number of integers k such that 1 <= k <= n
-     * and the GCF of n and k is 1
+     * Slower 2nd-try method
      *
      * @param  n  positive integer >= 1
      * @return    number of k's that fit the conditions

@@ -40,9 +40,6 @@ public class Phi {
         }
 
         System.out.println("Done!");
-        // 5: 4
-        // 10: 4
-        // 15: 8
     }
 
     /**

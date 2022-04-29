@@ -1,5 +1,5 @@
 /**
- * More Project Euler solutions
+ * Some Project Euler solutions.
  *
  * @author Daniel Kim
  * @version 3-7-22
@@ -21,7 +21,7 @@ public class ProjectEulerSolutions {
          * While the factor is no greater than the square root of n
          * (we will have found half of all factor pairs)
          */
-        while (factor*factor < n) {
+        while ((long) factor *factor < n) {
             // While 'factor' can divide the remaining composite factor
             while (largestPrimeFactor % factor == 0) {
                 // Set largestPrimeFactor to the other half of the factor pair
@@ -77,6 +77,4 @@ public class ProjectEulerSolutions {
 
         return sum;
     }
-
-
 }

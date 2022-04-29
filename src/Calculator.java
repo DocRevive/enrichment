@@ -2,13 +2,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * A calculator class with some methods
+ * A calculator class with some methods.
  *
  * @author Daniel Kim
  * @version 3-2-22
  */
 public class Calculator
 {
+    // TODO: Add tests
+
     /**
      * Empty constructor
      */
@@ -142,6 +144,8 @@ public class Calculator
      */
     public static int findGcf(int n1, int n2)
     {
+        // Euclidean algorithm
+
         int secondToLast = Math.min(n1, n2);
         int remainder = Math.max(n1, n2) % secondToLast;
         int nextNumber;

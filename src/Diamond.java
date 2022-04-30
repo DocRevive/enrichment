@@ -1,5 +1,5 @@
 /**
- * Class that enables the creation of diamonds.
+ * Class that can create diamonds.
  *
  * @author Daniel Kim
  * @version 4-9-22

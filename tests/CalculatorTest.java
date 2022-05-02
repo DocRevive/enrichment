@@ -1,49 +1,55 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculatorTest {
-    private final Calculator CALCULATOR = new Calculator();
+public class CalculatorTest {
+    private static Calculator calculator;
 
-    @Test
-    void findPrimes() {
-        assertArrayEquals(new Integer[]{2, 3, 5, 7}, CALCULATOR.findPrimes(8));
+    @BeforeAll
+    public static void setUp() {
+        calculator = new Calculator();
     }
 
     @Test
-    void abs() {
-        assertEquals(5, CALCULATOR.abs(-5));
-        assertEquals(3, CALCULATOR.abs(3));
+    public void findPrimes() {
+        assertArrayEquals(new Integer[]{2, 3, 5, 7}, calculator.findPrimes(8));
     }
 
     @Test
-    void isFactor() {
-        assertFalse(CALCULATOR.isFactor(90, 4));
-        assertTrue(CALCULATOR.isFactor(100, 2));
+    public void abs() {
+        assertEquals(5, calculator.abs(-5));
+        assertEquals(3, calculator.abs(3));
     }
 
     @Test
-    void testIsFactor() {
-        assertFalse(CALCULATOR.isFactor(90, 4, 7));
-        assertTrue(CALCULATOR.isFactor(100, 2, 20));
+    public void isFactor() {
+        assertFalse(calculator.isFactor(90, 4));
+        assertTrue(calculator.isFactor(100, 2));
     }
 
     @Test
-    void numberOfRoots() {
-        assertEquals("No real roots", CALCULATOR.numberOfRoots(2, 2, 5));
-        assertEquals("One real double root", CALCULATOR.numberOfRoots(1, 0, 0));
-        assertEquals("Two real roots", CALCULATOR.numberOfRoots(3, 4, -10));
+    public void testIsFactor() {
+        assertFalse(calculator.isFactor(90, 4, 7));
+        assertTrue(calculator.isFactor(100, 2, 20));
     }
 
     @Test
-    void smallestPrimeFactor() {
-        assertEquals(19, CALCULATOR.smallestPrimeFactor(589));
-        assertEquals(31, CALCULATOR.smallestPrimeFactor(1457));
+    public void numberOfRoots() {
+        assertEquals("No real roots", calculator.numberOfRoots(2, 2, 5));
+        assertEquals("One real double root", calculator.numberOfRoots(1, 0, 0));
+        assertEquals("Two real roots", calculator.numberOfRoots(3, 4, -10));
     }
 
     @Test
-    void findGcf() {
-        assertEquals(7, CALCULATOR.findGcf(21, 35));
-        assertEquals(590, CALCULATOR.findGcf(12390, 590));
+    public void smallestPrimeFactor() {
+        assertEquals(19, calculator.smallestPrimeFactor(589));
+        assertEquals(31, calculator.smallestPrimeFactor(1457));
+    }
+
+    @Test
+    public void findGcf() {
+        assertEquals(7, calculator.findGcf(21, 35));
+        assertEquals(590, calculator.findGcf(12390, 590));
     }
 }

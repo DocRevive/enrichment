@@ -9,8 +9,6 @@ import java.util.Arrays;
  */
 public class Calculator
 {
-    // TODO: Add tests
-
     /**
      * Empty constructor
      */
@@ -25,7 +23,7 @@ public class Calculator
      */
     public Integer[] findPrimes(int n)
     {
-        int i = 0;
+        int i;
         boolean[] boolArray = new boolean[n];
         ArrayList<Integer> primes = new ArrayList<>();
 
@@ -126,7 +124,7 @@ public class Calculator
      *
      * @param  n  number to get the smallest prime factor of
      */
-    public static int smallestPrimeFactor(int n)
+    public int smallestPrimeFactor(int n)
     {
         for (int i = 2; i < Math.sqrt(n); i++) {
             if (n % i == 0) return i;
@@ -142,7 +140,7 @@ public class Calculator
      * @param  n2  second number
      * @return     greatest common factor
      */
-    public static int findGcf(int n1, int n2)
+    public int findGcf(int n1, int n2)
     {
         // Euclidean algorithm
 

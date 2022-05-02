@@ -1,7 +1,6 @@
 /**
  * Class that represents square matrices and provides
  * matrix operations.
- * TODO: Tests
  *
  * @author Daniel Kim
  * @version 4-29-22
